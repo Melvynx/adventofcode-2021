@@ -166,3 +166,28 @@ datas.forEach((v, i) => {
     tuples = newValue;
   }
 });
+
+const datas = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263];
+
+datas
+  .slice(3)
+  .map((v, i) => v + datas[i - 1] + datas[i - 2])
+  .reduce(
+    (curr, acc) => {
+      if (newValue > curr.tuples) curr.increase += 1;
+      curr.increase = newValue;
+      return curr;
+    },
+    { tuples: Infinity, increase: 0 }
+  );
+
+datas
+  .slice(3)
+  .map((v, i) => v + datas[i - 1] + datas[i - 2])
+  .filter((v, i, a) => v > a[i - 1]).length;
+
+// Simplest answer
+datas
+  .slice(2)
+  .map((v, i) => v + datas[i + 1] + datas[i])
+  .filter((v, i, a) => v > a[i - 1]).length;
