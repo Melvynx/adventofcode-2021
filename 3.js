@@ -34,23 +34,15 @@ const answer1 = datas
   )
   .reduce(reduceMultiplyBinary, 1);
 
-const getMaxus = (a, i) => {
-  const countOf1 = a.map((v) => v[i]).filter((v) => v === '1').length;
-  const bitTofind = +(countOf1 >= a.length / 2) + '';
-  return a.filter((v) => v[i] === bitTofind);
-};
+const getMaxus = (a, i) =>
+  a.filter((v) => v[i] === +(a.filter((v) => !+v[i]).length >= a.length / 2) + '');
 
-const getMinux = (a, i) => {
-  const countOf1 = a.map((v) => v[i]).filter((v) => v === '1').length;
-  const toFind = +(countOf1 < a.length / 2) + '';
-  return a.filter((v) => v[i] === toFind);
-};
+const getMinux = (a, i) =>
+  a.filter((v) => v[i] === +(a.filter((v) => !+v[i]).length < a.length / 2) + '');
 
 const calcExercise2 = (a, func) => {
   let result = [...a];
-  for (let i = 0; result.length !== 1; i++) {
-    result = func(result, i);
-  }
+  for (let i = 0; result.length !== 1; i++) result = func(result, i);
   return result[0];
 };
 
