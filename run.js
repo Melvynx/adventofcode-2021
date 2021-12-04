@@ -13,8 +13,8 @@ const start = (id) => {
 
   const puzzle = fs.readFileSync(`./puzzle/${id}.txt`, 'utf-8').split('\n');
 
-  result.answer.part1 = runWithTime(puzzle, exercise.part1);
-  result.answer.part2 = runWithTime(puzzle, exercise.part2);
+  result.answer.part1 = runWithTime([...puzzle], exercise.part1);
+  result.answer.part2 = runWithTime([...puzzle], exercise.part2);
 
   return result;
 };
