@@ -9,7 +9,7 @@ const start = (id) => {
       part2: null,
     },
   };
-  const exercise = require(`./js/${id}.js`);
+  const exercise = require(`./js/${id}.2.js`);
 
   const puzzle = fs.readFileSync(`./puzzle/${id}.txt`, 'utf-8').split('\n');
 
@@ -23,7 +23,6 @@ const runWithTime = (puzzle, func) => {
   var startTime = performance.now();
   const result = func(puzzle);
   var endTime = performance.now();
-  // max 5 digit
   return {
     timeElapsed: `${Math.round((endTime - startTime) * 1000) / 1000}ms`,
     result,
@@ -38,7 +37,6 @@ function save(day, result) {
 
   try {
     fs.appendFileSync(path, `\n${date}\n`, 'utf-8');
-    fs.appendFileSync(path, '', 'utf-8');
     const dataLine = data.replaceAll('\\n', '\n').replaceAll('"', '');
     fs.appendFileSync(path, dataLine, 'utf-8');
   } catch (e) {
