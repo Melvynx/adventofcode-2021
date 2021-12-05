@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const start = (id) => {
+const start = (id, isTest) => {
   const result = {
     title: `AoC 2021 - Day ${id}`,
     time: 0,
@@ -9,9 +9,14 @@ const start = (id) => {
       part2: null,
     },
   };
-  const exercise = require(`./js/${id}.2.js`);
+  const exercise = require(`./js/${id}.js`);
 
-  const puzzle = fs.readFileSync(`./puzzle/${id}.txt`, 'utf-8').split('\n');
+  const puzzle = fs
+    .readFileSync(
+      `./puzzle/${id.split('.')[0]}${isTest ? '.test' : ''}.txt`,
+      'utf-8'
+    )
+    .split('\n');
 
   result.answer.part1 = runWithTime([...puzzle], exercise.part1);
   result.answer.part2 = runWithTime([...puzzle], exercise.part2);
@@ -32,7 +37,7 @@ const runWithTime = (puzzle, func) => {
 function save(day, result) {
   const data = JSON.stringify(result, null, 2);
 
-  const path = `stats/${day}/results.txt`;
+  const path = `stats/${day.split('.')[0]}/results.txt`;
   const date = new Date().toUTCString();
 
   try {

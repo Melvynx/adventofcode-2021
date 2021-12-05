@@ -1,13 +1,17 @@
 const { table } = require('table');
 const { start, save } = require('./run');
 
-const day = process.argv[process.argv.length - 1] || '0';
+const args = process.argv.slice(2);
+
+const day = args[0] || '0';
+
+const isTest = args[1] === 'test';
 
 if (day === '0') {
   throw new Error('Please specify a day');
 }
 
-const answers = start(day);
+const answers = start(day, isTest);
 
 const data = [
   ['', 'Part 1', 'Part 2'],
