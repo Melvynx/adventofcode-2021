@@ -21,7 +21,7 @@ const data = [
 
 const config = {
   columnDefault: {
-    width: 10,
+    width: 14,
   },
   header: {
     alignment: 'center',

@@ -10,7 +10,6 @@ const start = (id, isTest) => {
     },
   };
   const exercise = require(`./js/${id}.js`);
-
   const puzzle = fs
     .readFileSync(
       `./puzzle/${id.split('.')[0]}${isTest ? '.test' : ''}.txt`,

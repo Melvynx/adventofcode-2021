@@ -1,4 +1,4 @@
-FILE='../puzzle/5.test.txt'
+FILE='../puzzle/5.txt'
 POINT_X=0
 POINT_Y=1
 START=0
@@ -15,10 +15,10 @@ def parse_input(file):
 
             tuples = ((int(coordX[0]), int(coordX[1])), (int(coordY[0]), int(coordY[1])))
             # [PART 1]
-            # if tuples[CA][PX] == tuples[CB][PX] or tuples[CA][PY] == tuples[CB][PY]:
-                # datas.append(tuples)
+            if tuples[START][POINT_X] == tuples[END][POINT_X] or tuples[START][POINT_Y] == tuples[END][POINT_Y]:
+                datas.append(tuples)
             # [PART 2]
-            datas.append(tuples)
+            # datas.append(tuples)
     return datas
 
 def print_grid(grid):
@@ -37,7 +37,7 @@ def draw_grid(datas):
 
     for data in datas:
         draw_line(grid, data)
-        
+
     return grid
 
 def draw_line(grid, coord):
