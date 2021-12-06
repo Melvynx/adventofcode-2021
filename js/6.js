@@ -1,10 +1,9 @@
 const DAYS = 256;
 
 const part1 = (datas) => {
-  console.log(datas);
   const fishs = datas[0].split(',').map(Number);
 
-  for (let day = 1; day <= Math.min(80, 256); day++) {
+  for (let day = 1; day <= Math.min(80, DAYS); day++) {
     fishs.forEach((e, i) => {
       if (e === 0) {
         fishs[i] = 6;
@@ -19,26 +18,17 @@ const part1 = (datas) => {
 };
 
 const part2 = (datas) => {
-  const fishs = datas[0].split(',').map(Number);
+  const state = datas[0]
+    .split(',')
+    .reduce((acc, e) => (acc[e] += 1) && acc, new Array(9).fill(0));
 
-  let state = new Array(9).fill(0);
-  fishs.forEach((e) => {
-    state[e] += 1;
-  });
-
-  for (let day = 1; day <= DAYS; day++) {
-    const updated = new Array(9).fill(0);
-
-    state.forEach((e, i) => {
-      updated[i] = state[i + 1];
-    });
-
-    updated[6] += state[0];
-    updated[8] = state[0];
-    state = updated;
+  for (let i = 1; i <= DAYS; i++) {
+    const zero = state[0];
+    for (let i = 0; i < 8; i++) state[i] = state[i + 1];
+    state[6] += zero;
+    state[8] = zero;
   }
 
-  console.log(state);
   return state.reduce((a, b) => a + b, 0);
 };
 

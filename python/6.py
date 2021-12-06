@@ -1,11 +1,4 @@
-import json
-
 FILE='../puzzle/6.test.txt'
-POINT_X=0
-POINT_Y=1
-START=0
-END=1
-
 
 def parse_input(file):
     with open(file) as f:
@@ -26,24 +19,12 @@ def pass_one_day(fishes):
 def main():
     fishes = parse_input(FILE)
 
-    # PARTI 1
-    # for i in range(256):
-    #     print("Start day", i, "with", len(fishes), "fish")
-    #     for y in range(len(fishes)):
-    #         if fishes[y] == 0:
-    #             fishes.append(8)
-    #             fishes[y] = 6
-    #         else:
-    #             fishes[y] -= 1
-
-    # PARTI 2
     for i in range(256):
         fishes = pass_one_day(fishes)
         
     result = 0
     for i in range(len(fishes)):
         result += fishes[i]
-    print(result)
+    return result
 
-
-main()
+print(main())
