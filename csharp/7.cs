@@ -8,7 +8,7 @@ namespace adventofcode_2021.csharp
         private readonly string _text;
         public Day7()
         {
-            _text = System.IO.File.ReadAllText(@"../../../puzzle/7.txt");
+            _text = System.IO.File.ReadAllText("../../../puzzle/7.txt");
 
             Console.WriteLine($"Parti1: {Part1()}");
             Console.WriteLine($"Parti2: {Part2()}");
