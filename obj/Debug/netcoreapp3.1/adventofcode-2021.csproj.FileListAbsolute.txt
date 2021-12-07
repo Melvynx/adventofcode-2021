@@ -1,0 +1,12 @@
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/bin/Debug/netcoreapp3.1/adventofcode-2021.deps.json
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/bin/Debug/netcoreapp3.1/adventofcode-2021.runtimeconfig.json
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/bin/Debug/netcoreapp3.1/adventofcode-2021.runtimeconfig.dev.json
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/bin/Debug/netcoreapp3.1/adventofcode-2021.dll
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/bin/Debug/netcoreapp3.1/adventofcode-2021.pdb
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/obj/Debug/netcoreapp3.1/adventofcode-2021.csprojAssemblyReference.cache
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/obj/Debug/netcoreapp3.1/adventofcode-2021.AssemblyInfoInputs.cache
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/obj/Debug/netcoreapp3.1/adventofcode-2021.AssemblyInfo.cs
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/obj/Debug/netcoreapp3.1/adventofcode-2021.csproj.CoreCompileInputs.cache
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/obj/Debug/netcoreapp3.1/adventofcode-2021.dll
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/obj/Debug/netcoreapp3.1/adventofcode-2021.pdb
+/Users/melvynmalherbe/dev/other/tmp/adventofcode-2021/obj/Debug/netcoreapp3.1/adventofcode-2021.genruntimeconfig.cache

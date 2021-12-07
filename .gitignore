@@ -1,2 +1,5 @@
 node_modules
 stats
+bin
+.vscode
+.idea
