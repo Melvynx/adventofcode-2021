@@ -3,3 +3,4 @@ stats
 bin
 .vscode
 .idea
+obj/Debug
