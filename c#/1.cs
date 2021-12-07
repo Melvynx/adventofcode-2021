@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace adventofcode_2021
+namespace adventofcode_2021.c_
 {
     class Day7
     {
