@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace adventofcode_2021.c_
+namespace adventofcode_2021.csharp
 {
     class Day7
     {
@@ -16,14 +16,14 @@ namespace adventofcode_2021.c_
 
         private int Part1()
         {
-            var crabs = _text.Split(",").ToList().Select(int.Parse).ToList();
+            var crabs = _text.Split(",").Select(int.Parse).ToList();
             var median = crabs.OrderBy(a => a).ElementAt(crabs.Count / 2);
             return crabs.Select(v => Math.Abs(median - v)).Sum();
         }
 
         private double Part2()
         {
-            var crabs = _text.Split(",").ToList().Select(double.Parse).ToList();
+            var crabs = _text.Split(",").Select(double.Parse).ToList();
             var average = Math.Floor(crabs.Average());
             return crabs.Select(v => 
             {
