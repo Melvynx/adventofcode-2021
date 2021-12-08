@@ -6,7 +6,9 @@ const part1 = (datas) => {
 
 const part2 = (datas) => {
   const numbers = datas[0].split(',').map(Number);
-  const avg = Math.floor(numbers.reduce((a, b) => a + b, 0) / numbers.length);
+  const avg = Math.floor(
+    numbers.reduce((a, b) => a + b, 0) / numbers.length + 0.1111
+  );
   return numbers.reduce((acc, curr) => {
     const delta = Math.abs(curr - avg);
     return (delta * (delta + 1)) / 2 + acc;
