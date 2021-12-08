@@ -1,4 +1,8 @@
 {
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "table": "^6.7.5"
   },

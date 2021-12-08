@@ -5,7 +5,7 @@ const args = process.argv.slice(2);
 
 const day = args[0] || '0';
 
-const isTest = args[1] === 'test';
+const isTest = args[1] === '--test' || args[1] === '-t';
 
 if (day === '0') {
   throw new Error('Please specify a day');
