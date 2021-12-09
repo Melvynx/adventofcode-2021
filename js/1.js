@@ -10,7 +10,7 @@ function part1(datas) {
   return increseCount;
 }
 
-// solution 2
+// code golf
 function part2(datas) {
   return datas
     .slice(2)

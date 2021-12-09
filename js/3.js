@@ -1,5 +1,6 @@
 const reduceMultiplyBinary = (acc, curr) => acc * parseInt(curr, 2);
 
+// code golf without any variables
 const part1 = (datas) =>
   datas
     .map((v) => v.split(''))
@@ -39,6 +40,7 @@ const getMaxus = (a, i) =>
 const getMinux = (a, i) =>
   a.filter((v) => v[i] === +(a.filter((v) => !+v[i]).length < a.length / 2) + '');
 
+// code golf with unreadable code
 const calcExercise2 = (a, func) => {
   let result = [...a];
   for (let i = 0; result.length !== 1; i++) result = func(result, i);

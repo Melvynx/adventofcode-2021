@@ -14,7 +14,6 @@ const part1 = (datas) => {
 Array.prototype.first = function (c) {
   for (const b in this) if (c(this[b])) return this[b];
 };
-
 /* segments is like
    aaa
   b   c
@@ -26,6 +25,13 @@ Array.prototype.first = function (c) {
 
   I use this name for my variables!
 */
+
+/**
+ * Function por dormir
+ * @description Dormir por un tiempo determinado
+ * @param {Array} datas
+ * @returns {number}
+ */
 
 const part2 = (datas) => {
   return datas.reduce((acc, curr) => {
