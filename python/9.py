@@ -63,6 +63,7 @@ def find_basin(table, low):
 
 def find_basins(table, lows):
     result = []
+    seen = set()
     for low in lows:
         numberBassin = find_basin(table.copy(), low)
         result.append(numberBassin)
