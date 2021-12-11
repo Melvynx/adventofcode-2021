@@ -1,10 +1,11 @@
 const SIZE = 10;
 
-const part1 = (datas) => {
+const loop = (datas, maxDays, part) => {
   const grid = datas.map((d) => d.split('').map(Number));
   let flashed = 0;
+  let firstFullFlash = 0;
 
-  const day = () => {
+  const day = (day) => {
     const stack = [];
     const flash = (i, j) => {
       if (i < 0 || i > SIZE - 1 || j < 0 || j > SIZE - 1) return;
@@ -28,46 +29,20 @@ const part1 = (datas) => {
     for (let i = 0; i < SIZE; i++) for (let j = 0; j < SIZE; j++) flash(i, j);
 
     for (const s of stack) grid[s[0]][s[1]] = 0;
-  };
-  for (let i = 0; i < 100; i++) day();
 
-  return flashed;
+    if (stack.length === 10 * 10) firstFullFlash = firstFullFlash || day + 1;
+  };
+  for (let i = 0; i < maxDays; i++) day(i);
+
+  return part === '1' ? flashed : firstFullFlash;
+};
+
+const part1 = (datas) => {
+  return loop(datas, 100, '1');
 };
 
 const part2 = (datas) => {
-  const grid = datas.map((d) => d.split('').map(Number));
-  let result = 0;
-
-  const day = (dayId) => {
-    const stack = [];
-    const flash = (i, j) => {
-      if (i < 0 || i > SIZE - 1 || j < 0 || j > SIZE - 1) return;
-
-      grid[i][j] += 1;
-      if (grid[i][j] !== 10) return;
-
-      stack.push([i, j]);
-      flash(i - 1, j);
-      flash(i + 1, j);
-      flash(i, j - 1);
-      flash(i, j + 1);
-      flash(i - 1, j - 1);
-      flash(i - 1, j + 1);
-      flash(i + 1, j - 1);
-      flash(i + 1, j + 1);
-    };
-
-    for (let i = 0; i < SIZE; i++) for (let j = 0; j < SIZE; j++) flash(i, j);
-
-    for (const s of stack) grid[s[0]][s[1]] = 0;
-
-    if (stack.length === 10 * 10) {
-      result = dayId + 1;
-    }
-  };
-  for (let i = 0; i < 400 && !result; i++) day(i);
-
-  return result;
+  return loop(datas, 400, '2');
 };
 
 module.exports = {
