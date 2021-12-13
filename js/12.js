@@ -6,16 +6,15 @@ const isBigCave = (cave) => cave.toUpperCase() === cave;
 const part1 = (datas) => {
   datas = datas.map((data) => data.split('-'));
   let possibilities = 0;
-  const findPossibilities = (currRoad) => {
-    const newRoad = [...currRoad];
+  const findPossibilities = (currRoad) =>
     datas
-      .filter((d) => d.includes(newRoad[newRoad.length - 1]))
-      .map((d) => d.filter((c) => c !== newRoad[newRoad.length - 1])[0])
-      .filter((d) => isBigCave(d) || !newRoad.includes(d))
-      .forEach((d) =>
-        d === END ? possibilities++ : findPossibilities([...newRoad, d])
+      .filter((d) => d.includes(currRoad[currRoad.length - 1]))
+      .map((d) => (d[0] === currRoad[currRoad.length - 1] ? d[1] : d[0]))
+      .forEach(
+        (d) =>
+          (isBigCave(d) || !currRoad.includes(d)) &&
+          (d === END ? possibilities++ : findPossibilities([...currRoad, d]))
       );
-  };
   for (const start of datas.filter((d) => d.includes(START)))
     findPossibilities([START, start.filter((c) => c !== START)[0]]);
 
@@ -38,8 +37,8 @@ const part2 = (datas) => {
   const findPossibilities = (currRoad, canVisitedTwice = true) => {
     const newRoad = [...currRoad];
     datas
-      .filter((d) => d.includes(newRoad[newRoad.length - 1]))
-      .map((d) => d.filter((c) => c !== newRoad[newRoad.length - 1])[0])
+      .filter((d) => d.includes(currRoad[currRoad.length - 1]))
+      .map((d) => (d[0] === currRoad[currRoad.length - 1] ? d[1] : d[0]))
       .filter(
         (d) =>
           isBigCave(d) || (!newRoad.includesN(d, canVisitedTwice + 1) && d !== START)
